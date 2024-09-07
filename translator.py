@@ -7,8 +7,8 @@ braille_alphabet = {
     'm': 'OO..O.', 'n': 'OO.OO.', 'o': 'O..OO.', 'p': 'OOO.O.', 'q': 'OOOOO.', 'r': 'O.OOO.',
     's': '.OO.O.', 't': '.OOOO.', 'u': 'O...OO', 'v': 'O.O.OO', 'w': '.OOO.O', 'x': 'OO..OO',
     'y': 'OO.OOO', 'z': 'O..OOO', ' ': '......',
-    'cap': '.....O',  # for Capitalization
-    'num': '.O.OOO'  # for Numbers prefix
+    'cap': '.....O',  # For capitalization
+    'num': '.O.OOO'  # For numbers prefix
 }
 
 # Braille to English
@@ -79,10 +79,10 @@ def main():
     input_text = sys.argv[1]
 
     if input_text[0] in ('O', '.'):
-        # Assume like it is Braille input
+        # If it is Braille input
         translated = braille_to_english(input_text)
     else:
-        # Assume like it is English input
+        # If it is English input
         translated = english_to_braille(input_text)
 
     print(translated)
