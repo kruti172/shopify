@@ -1,0 +1,32 @@
+[1mdiff --git a/translator.py b/translator.py[m
+[1mindex a931ac6..e3ff905 100644[m
+[1m--- a/translator.py[m
+[1m+++ b/translator.py[m
+[36m@@ -7,11 +7,11 @@[m [mbraille_alphabet = {[m
+     'm': 'OO..O.', 'n': 'OO.OO.', 'o': 'O..OO.', 'p': 'OOO.O.', 'q': 'OOOOO.', 'r': 'O.OOO.',[m
+     's': '.OO.O.', 't': '.OOOO.', 'u': 'O...OO', 'v': 'O.O.OO', 'w': '.OOO.O', 'x': 'OO..OO',[m
+     'y': 'OO.OOO', 'z': 'O..OOO', ' ': '......',[m
+[31m-    'cap': '.....O',  # Capitalization[m
+[31m-    'num': '.O.OOO'  # Numbers prefix[m
+[32m+[m[32m    'cap': '.....O',  # for Capitalization[m
+[32m+[m[32m    'num': '.O.OOO'  # for Numbers prefix[m
+ }[m
+ [m
+[31m-# Reverse lookup for Braille to English[m
+[32m+[m[32m# Braille to English[m
+ braille_dict = {v: k for k, v in braille_alphabet.items()}[m
+ [m
+ # Number patterns[m
+[36m@@ -79,10 +79,10 @@[m [mdef main():[m
+     input_text = sys.argv[1][m
+ [m
+     if input_text[0] in ('O', '.'):[m
+[31m-        # Assume Braille input[m
+[32m+[m[32m        # Assume like it is Braille input[m
+         translated = braille_to_english(input_text)[m
+     else:[m
+[31m-        # Assume English input[m
+[32m+[m[32m        # Assume like it is English input[m
+         translated = english_to_braille(input_text)[m
+ [m
+     print(translated)[m

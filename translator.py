@@ -7,11 +7,11 @@ braille_alphabet = {
     'm': 'OO..O.', 'n': 'OO.OO.', 'o': 'O..OO.', 'p': 'OOO.O.', 'q': 'OOOOO.', 'r': 'O.OOO.',
     's': '.OO.O.', 't': '.OOOO.', 'u': 'O...OO', 'v': 'O.O.OO', 'w': '.OOO.O', 'x': 'OO..OO',
     'y': 'OO.OOO', 'z': 'O..OOO', ' ': '......',
-    'cap': '.....O',  # Capitalization
-    'num': '.O.OOO'  # Numbers prefix
+    'cap': '.....O',  # For capitalization
+    'num': '.O.OOO'  # For numbers prefix
 }
 
-# Reverse lookup for Braille to English
+# Braille to English
 braille_dict = {v: k for k, v in braille_alphabet.items()}
 
 # Number patterns
@@ -79,10 +79,10 @@ def main():
     input_text = sys.argv[1]
 
     if input_text[0] in ('O', '.'):
-        # Assume Braille input
+        # If it is Braille input
         translated = braille_to_english(input_text)
     else:
-        # Assume English input
+        # If it is English input
         translated = english_to_braille(input_text)
 
     print(translated)
